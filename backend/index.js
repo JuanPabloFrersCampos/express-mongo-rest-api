@@ -2,9 +2,12 @@ import express from 'express';
 
 import goalsRoutes from './routes/goalsRoutes.js';
 import { errorHandler } from './middleware/errorMiddleware.js';
+import { connectDB } from './config/db.js'
 
 const app = express();
 const PORT = 5000;
+
+connectDB();
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 
